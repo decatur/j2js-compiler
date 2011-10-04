@@ -1,0 +1,1920 @@
+<instructions>
+  
+  <instruction>
+    <mnemonic>aaload</mnemonic>
+    <code>50</code>
+    <form>
+      <in>arrayref</in>
+      <in>index</in>
+      <out type="object">objectref</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>aastore</mnemonic>
+    <code>83</code>
+    <form>
+      <in>arrayref</in>
+      <in>index</in>
+      <in>value</in>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>aconst_null</mnemonic>
+    <code>1</code>
+    <form>
+      <out type="object">null</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>aload</mnemonic>
+    <code>25</code>
+    <form>
+      <operand type="byte">index</operand>
+      <out type="object">objectref</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>aload_0</mnemonic>
+    <code>42</code>
+    <form>
+      <out type="object">objectref</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>aload_1</mnemonic>
+    <code>43</code>
+    <form>
+      <out type="object">objectref</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>aload_2</mnemonic>
+    <code>44</code>
+    <form>
+      <out type="object">objectref</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>aload_3</mnemonic>
+    <code>45</code>
+    <form>
+      <out type="object">objectref</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>anewarray</mnemonic>
+    <code>189</code>
+    <form>
+      <operand type="short">index</operand>
+      <in type="int">count</in>
+      <out type="object">arrayref</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>areturn</mnemonic>
+    <code>176</code>
+    <form>
+      <in>objectref</in>
+      <empty value="true"/>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>arraylength</mnemonic>
+    <code>190</code>
+    <form>
+      <in>arrayref</in>
+      <out type="int">length</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>astore</mnemonic>
+    <code>58</code>
+    <form>
+      <operand type="byte">index</operand>
+      <in>objectref</in>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>astore_0</mnemonic>
+    <code>75</code>
+    <form>
+      <in>objectref</in>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>astore_1</mnemonic>
+    <code>76</code>
+    <form>
+      <in>objectref</in>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>astore_2</mnemonic>
+    <code>77</code>
+    <form>
+      <in>objectref</in>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>astore_3</mnemonic>
+    <code>78</code>
+    <form>
+      <in>objectref</in>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>athrow</mnemonic>
+    <code>191</code>
+    <form>
+      <in>objectref</in>
+      <out type="object">objectref</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>baload</mnemonic>
+    <code>51</code>
+    <form>
+      <in>arrayref</in>
+      <in>index</in>
+      <out type="int">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>bastore</mnemonic>
+    <code>84</code>
+    <form>
+      <in>arrayref</in>
+      <in>index</in>
+      <in>value</in>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>bipush</mnemonic>
+    <code>16</code>
+    <form>
+      <operand type="byte">byte</operand>
+      <out type="int">value</out>
+    </form>
+  </instruction>
+
+
+  <instruction>
+    <mnemonic>new</mnemonic>
+    <code>187</code>
+    <form>
+      <operand type="short">index</operand>
+      <out type="object">objectref</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>newarray</mnemonic>
+    <code>188</code>
+    <form>
+      <operand type="byte">atype</operand>
+      <in type="int">count</in>
+      <out type="object">arrayref</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>nop</mnemonic>
+    <code>0</code>
+    <form>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>pop</mnemonic>
+    <code>87</code>
+    <form>
+      <in type="cat1">value</in>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>pop2</mnemonic>
+    <code>88</code>
+    <form>
+      <in type="cat2">value</in>
+    </form>
+    <form>
+      <in type="cat1">value2</in>
+      <in type="cat1">value1</in>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>putfield</mnemonic>
+    <code>181</code>
+    <form>
+      <operand type="short">index</operand>   
+      <in>objectref</in>
+      <in>value</in>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>putstatic</mnemonic>
+    <code>179</code>
+    <form>
+      <operand type="short">index</operand>   
+      <in>value</in>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>ret</mnemonic>
+    <code>169</code>
+    <form>
+      <operand type="byte">index</operand>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>return</mnemonic>
+    <code>177</code>
+    <form>
+      <empty value="true"/>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>saload</mnemonic>
+    <code>53</code>
+    <form>
+      <in>arrayref</in>
+      <in>index</in>
+      <out type="short">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>sastore</mnemonic>
+    <code>86</code>
+    <form>
+      <in>array</in>
+      <in>index</in>
+      <in>value</in>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>sipush</mnemonic>
+    <code>17</code>
+    <form>
+      byte byte1   
+      byte byte2  
+      <out type="short">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>swap</mnemonic>
+    <code>95</code>
+    <form>
+      <in type="cat1">value2</in>
+      <in type="cat1">value1</in>
+      <out type="cat1">value1</out>
+      <out type="cat1">value2</out>
+    </form>
+  </instruction>
+  
+  <instruction varops="true">
+    <mnemonic>tableswitch</mnemonic>
+    <code>170</code>
+    <form>
+      <operand type="byte">padding</operand>
+      <operand type="byte">padding</operand>
+      <operand type="byte">padding</operand>
+      <operand type="int">default</operand>   
+      <operand type="int">low</operand>   
+      <operand type="int">high</operand>   
+      <!-- jump offsets... -->
+      <in type="int">index</in>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>wide</mnemonic>
+    <code>196</code>
+    <form>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>caload</mnemonic>
+    <code>52</code>
+    <form>
+      <in>arrayref</in>
+      <in>index</in>
+      <out type="int">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>castore</mnemonic>
+    <code>85</code>
+    <form>
+      <in>arrayref</in>
+      <in>index</in>
+      <in>value</in>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>checkcast</mnemonic>
+    <code>192</code>
+    <form>
+      <operand type="short">index</operand>   
+      <in>objectref</in>
+      <out type="object">objectref</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>d2f</mnemonic>
+    <code>144</code>
+    <form>
+      <in>value</in>
+      <out type="float">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>d2i</mnemonic>
+    <code>142</code>
+    <form>
+      <in>value</in>
+      <out type="int">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>d2l</mnemonic>
+    <code>143</code>
+    <form>
+      <in>value</in>
+      <out type="long">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>dadd</mnemonic>
+    <code>99</code>
+    <form>
+      <in type="double">value1</in>
+      <in type="double">value2</in>
+      <out type="double">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>daload</mnemonic>
+    <code>49</code>
+    <form>
+      <in>arrayref</in>
+      <in>index</in>
+      <out type="double">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>dastore</mnemonic>
+    <code>82</code>
+    <form>
+      <in>arrayref</in>
+      <in>index</in>
+      <in>value</in>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>dcmpl</mnemonic>
+    <code>151</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in>
+      <out type="int">result</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>dcmpg</mnemonic>
+    <code>152</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in>
+      <out type="int">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>dconst_0</mnemonic>
+    <code>14</code>
+    <form>
+      <out type="double">d</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>dconst_1</mnemonic>
+    <code>15</code>
+    <form>
+      <out type="double">d</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>ddiv</mnemonic>
+    <code>111</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in>
+      <out type="double">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>dload</mnemonic>
+    <code>24</code>
+    <form>
+      <operand type="byte">index</operand>
+      <out type="double">value</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>dload_0</mnemonic>
+    <code>38</code>
+    <form>
+      <out type="double">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>dload_1</mnemonic>
+    <code>39</code>
+    <form>
+      <out type="double">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>dload_2</mnemonic>
+    <code>40</code>
+    <form>
+      <out type="double">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>dload_3</mnemonic>
+    <code>41</code>
+    <form>
+      <out type="double">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>dmul</mnemonic>
+    <code>107</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in>
+      <out type="double">result</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>dneg</mnemonic>
+    <code>119</code>
+    <form>
+      <in>value</in>
+      <out type="double">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>drem</mnemonic>
+    <code>115</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in>
+      <out type="double">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>dreturn</mnemonic>
+    <code>175</code>
+    <form>
+      <in type="double">value</in>
+      <empty value="true"/>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>dstore</mnemonic>
+    <code>57</code>
+    <form>
+      <operand type="byte">index</operand>
+      <in type="double">value</in>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>dstore_0</mnemonic>
+    <code>71</code>
+    <form>
+      <in type="double">value</in> 
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>dstore_1</mnemonic>
+    <code>72</code>
+    <form>
+      <in type="double">value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>dstore_2</mnemonic>
+    <code>73</code>
+    <form>
+      <in type="double">value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>dstore_3</mnemonic>
+    <code>74</code>
+    <form>
+      <in type="double">value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>dsub</mnemonic>
+    <code>103</code>
+    <form>
+      <in type="double">value1</in>
+      <in type="double">value2</in>
+      <out type="double">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>dup</mnemonic>
+    <code>89</code>
+    <form>
+      <in type="cat1">value</in>
+      <out type="cat1">value</out>
+      <out type="cat1">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>dup_x1</mnemonic>
+    <code>90</code>
+    <form>
+      <in type="cat1">value2</in>
+      <in type="cat1">value1</in> 
+      <out type="cat1">value1</out>
+      <out type="cat1">value2</out>
+      <out type="cat1">value1</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>dup_x2</mnemonic>
+    <code>91</code>
+    <form>
+      <in type="cat1">value3</in>
+      <in type="cat1">value2</in>
+      <in type="cat1">value1</in>
+      <out type="cat1">value1</out>
+      <out type="cat1">value3</out>
+      <out type="cat1">value2</out>
+      <out type="cat1">value1</out>
+    </form>
+    <form>
+      <in type="cat2">value2</in>
+      <in type="cat1">value1</in> 
+      <out type="cat1">value1</out>
+      <out type="cat2">value2</out>
+      <out type="cat1">value1</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>dup2</mnemonic>
+    <code>92</code>
+    <form>
+      <in type="cat1">value2</in>
+      <in type="cat1">value1</in>
+      <out type="cat1">value2</out>
+      <out type="cat1">value1</out>
+      <out type="cat1">value2</out>
+      <out type="cat1">value1</out>
+    </form>
+    <form>
+      <in type="cat2">value</in>
+      <out type="cat2">value</out>
+      <out type="cat2">value</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>dup2_x1</mnemonic>
+    <code>93</code>
+    <form>
+      <in type="cat1">value3</in>
+      <in type="cat1">value2</in>
+      <in type="cat1">value1</in>
+      <out type="cat1">value2</out>
+      <out type="cat1">value1</out>
+      <out type="cat1">value3</out>
+      <out type="cat1">value2</out>
+      <out type="cat1">value1</out> 
+    </form>
+    <form>
+      <in type="cat1">value2</in>
+      <in type="cat2">value1</in> 
+      <out type="cat2">value1</out>
+      <out type="cat1">value2</out>
+      <out type="cat2">value1</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>dup2_x2</mnemonic>
+    <code>94</code>
+    <form>
+      <in type="cat1">value4</in>
+      <in type="cat1">value3</in>
+      <in type="cat1">value2</in>
+      <in type="cat1">value1</in>
+      <out type="cat1">value2</out>
+      <out type="cat1">value1</out>
+      <out type="cat1">value4</out>
+      <out type="cat1">value3</out>
+      <out type="cat1">value2</out>
+      <out type="cat1">value1</out> 
+    </form>
+    <form>
+      <in type="cat1">value3</in>
+      <in type="cat1">value2</in>
+      <in type="cat2">value1</in>
+      <out type="cat2">value1</out>
+      <out type="cat1">value3</out>
+      <out type="cat1">value2</out>
+      <out type="cat2">value1</out> 
+    </form>
+    <form>
+      <in type="cat2">value3</in>
+      <in type="cat1">value2</in>
+      <in type="cat1">value1</in>
+      <out type="cat1">value2</out>
+      <out type="cat1">value1</out>
+      <out type="cat2">value3</out>
+      <out type="cat1">value2</out>
+      <out type="cat1">value1</out> 
+    </form>
+    <form>
+      <in type="cat2">value2</in>
+      <in type="cat2">value1</in>
+      <out type="cat2">value1</out> 
+      <out type="cat2">value2</out>
+      <out type="cat2">value1</out> 
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>f2d</mnemonic>
+    <code>141</code>
+    <form>
+      <in>value</in>
+      <out type="double">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>f2i</mnemonic>
+    <code>139</code>
+    <form>
+      <in type="float">value</in> 
+      <out type="int">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>f2l</mnemonic>
+    <code>140</code>
+    <form>
+      <in>value</in> 
+      <out type="long">result</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>fadd</mnemonic>
+    <code>98</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="float">result</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>faload</mnemonic>
+    <code>48</code>
+    <form>
+      <in>arrayref</in>
+      <in>index</in> 
+      <out type="float">value</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>fastore</mnemonic>
+    <code>81</code>
+    <form>
+      <in>arrayref</in>
+      <in>index</in>
+      <in>value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>fcmpl</mnemonic>
+    <code>149</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="int">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>fcmpg</mnemonic>
+    <code>150</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="int">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>fconst_0</mnemonic>
+    <code>11</code>
+    <form>
+      <out type="float">f</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>fconst_1</mnemonic>
+    <code>12</code>
+    <form>
+      <out type="float">f</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>fconst_2</mnemonic>
+    <code>13</code>
+    <form>
+      <out type="float">f</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>fdiv</mnemonic>
+    <code>110</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="float">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>fload</mnemonic>
+    <code>23</code>
+    <form>
+      <operand type="byte">index</operand>
+      <out type="float">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>fload_0</mnemonic>
+    <code>34</code>
+    <form>
+      <out type="float">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>fload_1</mnemonic>
+    <code>35</code>
+    <form>
+      <out type="float">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>fload_2</mnemonic>
+    <code>36</code>
+    <form>
+      <out type="float">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>fload_3</mnemonic>
+    <code>37</code>
+    <form>
+      <out type="float">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>fmul</mnemonic>
+    <code>106</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="float">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>fneg</mnemonic>
+    <code>118</code>
+    <form>
+      <in>value</in> 
+      <out type="float">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>frem</mnemonic>
+    <code>114</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="float">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>freturn</mnemonic>
+    <code>174</code>
+    <form>
+      <in>value</in> 
+      <empty value="true"/>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>fstore</mnemonic>
+    <code>56</code>
+    <form>
+      <operand type="byte">index</operand>
+      <in>value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>fstore_0</mnemonic>
+    <code>67</code>
+    <form>
+      <in type="float">value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>fstore_1</mnemonic>
+    <code>68</code>
+    <form>
+      <in type="float">value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>fstore_2</mnemonic>
+    <code>69</code>
+    <form>
+      <in type="float">value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>fstore_3</mnemonic>
+    <code>70</code>
+    <form>
+      <in type="float">value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>fsub</mnemonic>
+    <code>102</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="float">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>getfield</mnemonic>
+    <code>180</code>
+    <form>
+      <operand type="short">index</operand>   
+      <in>objectref</in> 
+      <out>value</out> 
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>getstatic</mnemonic>
+    <code>178</code>
+    <form>
+      <operand type="short">index</operand>   
+      <out>value</out>	
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>goto</mnemonic>
+    <code>167</code>
+    <form>
+      <operand type="short">branch</operand>   
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>goto_w</mnemonic>
+    <code>200</code>
+    <form>
+      <operand type="int">branch</operand>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>i2b</mnemonic>
+    <code>145</code>
+    <form>
+      <in>value</in> 
+      <out type="byte">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>i2c</mnemonic>
+    <code>146</code>
+    <form>
+      <in>value</in> 
+      <out type="byte">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>i2d</mnemonic>
+    <code>135</code>
+    <form>
+      <in>value</in> 
+      <out type="double">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>i2f</mnemonic>
+    <code>134</code>
+    <form>
+      <in>value</in> 
+      <out type="float">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>i2l</mnemonic>
+    <code>133</code>
+    <form>
+      <in>value</in> 
+      <out type="long">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>i2s</mnemonic>
+    <code>147</code>
+    <form>
+      <in>value</in> 
+      <out type="short">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>iadd</mnemonic>
+    <code>96</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="int">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>iaload</mnemonic>
+    <code>46</code>
+    <form>
+      <in>arrayref</in>
+      <in>index</in> 
+      <out type="int">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>iand</mnemonic>
+    <code>126</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="int">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>iastore</mnemonic>
+    <code>79</code>
+    <form>
+      <in>arrayref</in>
+      <in>index</in>
+      <in>value</in> 
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>iconst_m1</mnemonic>
+    <code>2</code>
+    <form>
+      <out type="int">i</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>iconst_0</mnemonic>
+    <code>3</code>
+    <form>
+      <out type="int">i</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>iconst_1</mnemonic>
+    <code>4</code>
+    <form>
+      <out type="int">i</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>iconst_2</mnemonic>
+    <code>5</code>
+    <form>
+      <out type="int">i</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>iconst_3</mnemonic>
+    <code>6</code>
+    <form>
+      <out type="int">i</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>iconst_4</mnemonic>
+    <code>7</code>
+    <form>
+      <out type="int">i</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>iconst_5</mnemonic>
+    <code>8</code>
+    <form>
+      <out type="int">i</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>idiv</mnemonic>
+    <code>108</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="int">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>if_acmpeq</mnemonic>
+    <code>165</code>
+    <form>
+      <operand type="short">branch</operand>
+      <in>value1</in>
+      <in>value2</in>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>if_acmpne</mnemonic>
+    <code>166</code>
+    <form>
+      <operand type="short">branch</operand>
+      <in>value1</in>
+      <in>value2</in>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>if_icmpeq</mnemonic>
+    <code>159</code>
+    <form>
+      <operand type="short">branch</operand>
+      <in>value1</in>
+      <in>value2</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>if_icmpne</mnemonic>
+    <code>160</code>
+    <form>
+      <operand type="short">branch</operand>
+      <in>value1</in>
+      <in>value2</in> 
+    </form>
+  </instruction>
+  <instruction>
+    <mnemonic>if_icmplt</mnemonic>
+    <code>161</code>
+    <form>
+      <operand type="short">branch</operand>
+      <in>value1</in>
+      <in>value2</in> 
+    </form>
+  </instruction>
+  <instruction>
+    <mnemonic>if_icmpge</mnemonic>
+    <code>162</code>
+    <form>
+      <operand type="short">branch</operand>
+      <in>value1</in>
+      <in>value2</in> 
+    </form>
+  </instruction>
+  <instruction>
+    <mnemonic>if_icmpgt</mnemonic>
+    <code>163</code>
+    <form>
+      <operand type="short">branch</operand>
+      <in>value1</in>
+      <in>value2</in> 
+    </form>
+  </instruction>
+  <instruction>
+    <mnemonic>if_icmple</mnemonic>
+    <code>164</code>
+    <form>
+      <operand type="short">branch</operand>
+      <in>value1</in>
+      <in>value2</in> 
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>ifeq</mnemonic>
+    <code>153</code>
+    <form>
+      <operand type="short">branch</operand>
+      <in>value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>ifne</mnemonic>
+    <code>154</code>
+    <form>
+      <operand type="short">branch</operand>
+      <in>value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>iflt</mnemonic>
+    <code>155</code>
+    <form>
+      <operand type="short">branch</operand>
+      <in>value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>ifge</mnemonic>
+    <code>156</code>
+    <form>
+      <operand type="short">branch</operand>
+      <in>value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>ifgt</mnemonic>
+    <code>157</code>
+    <form>
+      <operand type="short">branch</operand>
+      <in>value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>ifle</mnemonic>
+    <code>158</code>
+    <form>
+      <operand type="short">branch</operand>
+      <in>value</in> 
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>ifnonnull</mnemonic>
+    <code>199</code>
+    <form>
+      <operand type="short">branch</operand>
+      <in>value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>ifnull</mnemonic>
+    <code>198</code>
+    <form>
+      <operand type="short">branch</operand>
+      <in>value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>iinc</mnemonic>
+    <code>132</code>
+    <form>
+      <operand type="byte">index</operand>   
+      <operand type="int">const</operand>  
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>iload</mnemonic>
+    <code>21</code>
+    <form>
+      <operand type="byte">index</operand> 
+      <out type="int">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>iload_0</mnemonic>
+    <code>26</code>
+    <form>
+      <out type="int">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>iload_1</mnemonic>
+    <code>27</code>
+    <form>
+      <out type="int">value</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>iload_2</mnemonic>
+    <code>28</code>
+    <form>
+      <out type="int">value</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>iload_3</mnemonic>
+    <code>29</code>
+    <form>
+      <out type="int">value</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>imul</mnemonic>
+    <code>104</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="int">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>ineg</mnemonic>
+    <code>116</code>
+    <form>
+      <in>value</in> 
+      <out type="int">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>instanceof</mnemonic>
+    <code>193</code>
+    <form>
+      <operand type="short">index</operand>
+      <in>objectref</in> 
+      <out type="int">result</out>
+    </form>
+  </instruction>
+  
+  <instruction varIn="true" varOut="true">
+    <mnemonic>invokeinterface</mnemonic>
+    <code>185</code>
+    <form>
+      <operand type="short">index</operand>
+      <operand type="byte">count</operand>   
+      <operand type="byte">0</operand>   
+      <in>objectref</in>
+      <in>arg1</in>
+      <in>...</in>
+      <in>argN</in>
+    </form>
+  </instruction>
+  
+  <instruction varIn="true">
+    <operand type="short">index</operand>
+    <mnemonic>invokespecial</mnemonic>
+    <code>183</code>
+    <form>
+      <in>objectref</in>
+      <in>arg1</in>
+      <in>...</in>
+      <in>argN</in>
+    </form>
+  </instruction>
+  
+  <instruction varIn="true" varOut="true">
+    <mnemonic>invokestatic</mnemonic>
+    <code>184</code>
+    <form>
+      <operand type="short">index</operand>
+      <in>arg1</in>
+      <in>...</in>
+      <in>argN</in>
+    </form>
+  </instruction>
+  
+  <instruction varIn="true" varOut="true">
+    <mnemonic>invokevirtual</mnemonic>
+    <code>182</code>
+    <form>
+      <in>objectref</in>
+      <in>arg1</in>
+      <in>...</in>
+      <in>argN</in>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>ior</mnemonic>
+    <code>128</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="int">result</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>irem</mnemonic>
+    <code>112</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="int">result</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>ireturn</mnemonic>
+    <code>172</code>
+    <form>
+      <in>value</in> 
+      <empty value="true"/>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>ishl</mnemonic>
+    <code>120</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="int">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>ishr</mnemonic>
+    <code>122</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="int">result</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>istore</mnemonic>
+    <code>54</code>
+    <form>
+      <operand type="byte">index</operand>
+      <in>value</in> 
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>istore_0</mnemonic>
+    <code>59</code>
+    <form>
+      <in>value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>istore_1</mnemonic>
+    <code>60</code>
+    <form>
+      <in>value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>istore_2</mnemonic>
+    <code>61</code>
+    <form>
+      <in>value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>istore_3</mnemonic>
+    <code>62</code>
+    <form>
+      <in>value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>isub</mnemonic>
+    <code>100</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="int">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>iushr</mnemonic>
+    <code>124</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="int">result</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>ixor</mnemonic>
+    <code>130</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="int">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>jsr</mnemonic>
+    <code>168</code>
+    <form>
+      <operand type="short">branch</operand>
+      <out type="returnAddress">address</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>jsr_w</mnemonic>
+    <code>201</code>
+    <form>
+      <operand type="int">branch</operand>
+      <out type="returnAddress">address</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>l2d</mnemonic>
+    <code>138</code>
+    <form>
+      <in>value</in> 
+      <out type="double">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>l2f</mnemonic>
+    <code>137</code>
+    <form>
+      <in>value</in> 
+      <out type="float">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>l2i</mnemonic>
+    <code>136</code>
+    <form>
+      <in>value</in> 
+      <out type="int">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>ladd</mnemonic>
+    <code>97</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="long">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>laload</mnemonic>
+    <code>47</code>
+    <form>
+      <in>arrayref</in>
+      <in>index</in> 
+      <out type="long">value</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>land</mnemonic>
+    <code>127</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="long">result</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>lastore</mnemonic>
+    <code>80</code>
+    <form>
+      <in>arrayref</in>
+      <in>index</in>
+      <in>value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lcmp</mnemonic>
+    <code>148</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="int">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lconst_0</mnemonic>
+    <code>9</code>
+    <form>
+      <out type="long">l</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lconst_1</mnemonic>
+    <code>10</code>
+    <form>
+      <out type="long">l</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>ldc</mnemonic>
+    <code>18</code>
+    <form>
+      <operand type="byte">index</operand>
+      <out type="cat1">value</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>ldc_w</mnemonic>
+    <code>19</code>
+    <form>
+      <out type="cat1">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>ldc2_w</mnemonic>
+    <code>20</code>
+    <form>
+      <out type="cat1">value</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>ldiv</mnemonic>
+    <code>109</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="long">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lload</mnemonic>
+    <code>22</code>
+    <form>
+      <operand type="byte">index</operand>
+      <out type="long">value</out>
+    </form>
+  </instruction>
+  
+  <instruction>
+    <mnemonic>lload_0</mnemonic>
+    <code>30</code>
+    <form>
+      <out type="long">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lload_1</mnemonic>
+    <code>31</code>
+    <form>
+      <out type="long">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lload_2</mnemonic>
+    <code>32</code>
+    <form>
+      <out type="long">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lload_3</mnemonic>
+    <code>33</code>
+    <form>
+      <out type="long">value</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lmul</mnemonic>
+    <code>105</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="long">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lneg</mnemonic>
+    <code>117</code>
+    <form>
+      <in>value</in> 
+      <out type="long">result</out>
+    </form>
+  </instruction>
+
+  <instruction varOps="true">
+    <mnemonic>lookupswitch</mnemonic>
+    <code>171</code>
+    <form>
+      <operand type="byte">padding</operand>
+      <operand type="byte">padding</operand>
+      <operand type="byte">padding</operand>
+      <operand type="int">default</operand>
+      <operand type="int">npairs</operand>   
+      <!-- match-offset pairs... -->
+      <in>key</in>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lor</mnemonic>
+    <code>129</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="long">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lrem</mnemonic>
+    <code>113</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="long">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lreturn</mnemonic>
+    <code>173</code>
+    <form>
+      <in>value</in> 
+      <empty value="true"/>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lshl</mnemonic>
+    <code>121</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="long">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lshr</mnemonic>
+    <code>123</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="long">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lstore</mnemonic>
+    <code>55</code>
+    <form>
+      <operand type="byte">index</operand>
+      <in>value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lstore_0</mnemonic>
+    <code>63</code>
+    <form>
+      <in>value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lstore_1</mnemonic>
+    <code>64</code>
+    <form>
+      <in>value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lstore_2</mnemonic>
+    <code>65</code>
+    <form>
+      <in>value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lstore_3</mnemonic>
+    <code>66</code>
+    <form>
+      <in>value</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lsub</mnemonic>
+    <code>101</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="long">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lushr</mnemonic>
+    <code>125</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="long">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>lxor</mnemonic>
+    <code>131</code>
+    <form>
+      <in>value1</in>
+      <in>value2</in> 
+      <out type="long">result</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>monitorenter</mnemonic>
+    <code>194</code>
+    <form>
+      <in>objectref</in> 
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>monitorexit</mnemonic>
+    <code>195</code>
+    <form>
+      <in>objectref</in> 
+    </form>
+  </instruction>
+
+  <instruction varIn="true">
+    <mnemonic>multianewarray</mnemonic>
+    <code>197</code>
+    <form>
+      <operand type="short">index</operand>
+      <operand type="byte">dimension N</operand>
+      <in>count1</in>
+      <in>...</in>
+      <in>countN</in>
+      <out type="object">arrayref</out>
+    </form>
+  </instruction>
+
+  <instruction>
+    <mnemonic>xxxunusedxxx</mnemonic>
+    <code>186</code>
+    <form>
+    </form>
+  </instruction>
+
+</instructions>

@@ -1,0 +1,7 @@
+git.txt
+pom.xml
+src/main/resources/META-INF/*
+src/site/**/*
+src/test/**/*
+launchConfig/**/*
+target/**/*

@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>J2JS Package Documentation</title>
+
+    <style type="text/css">
+      <!--
+      pre {margin-top:0px; background-color:#CCCCCC;}
+      div.l1 {margin-left:0px;}
+      div.l2 {margin-left:24px;}
+      div.l3 {margin-left:48px;}
+      -->
+    </style>
+
+    <script>
+      function foo() {
+      var elems = document.getElementsByTagName("div");
+      for (var i=0; i<elems.length; i++) {
+      var elem = elems[i];
+      var level = 0;
+      var p = elem.parentNode.parentNode;
+      while (p != null) {
+      level++;
+      p = p.parentNode;
+      }
+
+      elem.className = "l" + level;
+      var h = document.createElement("h" + level);
+      h.appendChild(document.createTextNode(elem.title));
+      elem.insertBefore(h, elem.firstChild);
+      }
+      }
+    </script>
+
+  </head>
+
+  <body onload="foo()">
+    
+    <div title="Introduction">
+      <p> 
+	This document describes the production patterns for byte code by the
+	<tt>jdk 1.4.2</tt> compiler.
+      </p>
+    </div>
+    
+    <div title="Branches">
+     An if statement is compiled as follows:
+     <pre>
+        cond(A) block A</pre>
+     
+    An if-else statement is compiled as follows:
+    <pre>
+        cond(A) block goto(B) A block B</pre>
+    </div>
+    
+    <div title="Increment and Decrement">
+    
+      <div title="(A) Prefix incrementing/decrementing a field">
+	<pre>
+        aload         // Load object reference.
+        dup           // Duplicate object reference.
+        getfield      // Fetch field oldValue.
+        delta         // Can be any value, could even be an expression.
+        add/sub       // Increment/decrement value.
+                      // Stack: ref newValue
+        dup_x1        // Duplicate top and put it on third position.
+                      // Stack: newValue ref newValue.
+        putfield      // Store field value.
+                      // Stack: newValue</pre>
+
+	Reduction:
+	++field, --field, or (field = field + delta), if delta not equal to constant +/-1.
+      </div>
+      
+      <div title="(B) Postfix incrementing/decrementing a field">
+	<pre>
+        aload         // Load object reference.
+        dup           // Duplicate object reference.
+        getfield      // Fetch field value.
+                      // Stack: ref oldValue
+        dup_x1        // Duplicate top and put it on third position.
+                      // Stack: oldValue ref oldValue
+        const         // Must be constant +/-1.
+        add/sub       // Increment/decrement value.
+                      // Stack: oldValue ref newValue
+        putfield      // Store field value.
+                      // Stack: oldValue.</pre>
+	
+	Reduction:
+	field++ or field--.
+      </div>
+      
+      <div title="(C) Prefix incrementing/decrementing a local integer variable by constant amount">
+	<pre>
+        iinc(delta)   // Increment variable.
+        load          // Load variable.
+                      // Stack: newValue</pre>
+      </div>
+
+      <div title="(D) Prefix incrementing/decrementing a local variable by non-constant amount">
+	<pre>
+        load          // Load variable. 
+        delta         // Any expression.
+        add           // Increment.
+        dup           // Stack: newValue newValue
+        store         // Store to variable.
+                      // Stack: newValue</pre>
+      </div>
+
+      <div title="(E) Postfix incrementing/decrementing a local integer variable by constant amount">
+	<pre>
+	 load          // Load variable.
+	 iinc(delta)   // Increment variable.
+	 // Stack: oldValue</pre>
+      </div>
+      
+      <p>
+	Note that we could match the pattern <code>[load, iinc, load]</code>
+	with either (E) <code>[i++, i]</code> or (C) <code>[i, ++i]</code>.
+	Of these obviously equivalent alternatives we choose (E).
+      </p>
+
+    </div>
+
+    <div title="Loops">
+
+      <pre>
+    While statement:
+       goto(B) A block B cond(A)</pre>
+      
+      <pre>
+    Do statement:
+       A block cond(A)
+      </pre>
+
+      <pre>
+    For statement (equivalent to a do statement):
+       init A block increment cond(A)
+      </pre>
+      
+
+    </div> <!-- Loops -->
+    
+    <div title="Exception Handling">
+      <p>
+	In Java, a try statement has the following structure:
+      </p>
+      <pre>
+               try Block Catch* (Catch | Finally)
+      </pre>
+      
+      <div title="With Finally Clause">
+	
+	A try block with finally clause has the following structure: 
+	
+	<pre>
+    TryCatchFinally:
+        tryBlock 
+        Handler  // 0..n times
+        DefaultHandler
+        B Finally 
+        A jsr(B) 
+	</pre>
+      </div>
+      
+      Each time the control flow exits the try block or one of the non-default handlers,
+      a jsr(B) is prepended. If the try block or one of the non-default
+      handlers are exited by default (fall-through), then a goto(A) is appended at the end of the block.
+      
+      <div title="Without Finally Clause">
+	There must be at least one handler. All handlers are non-default. Typically, goreth is a goto(A),
+	but this must not be the case.
+	<pre>
+    TryCatchFinally:
+        tryBlock goreth  
+        Handler goreth  // 0..n
+        Handler
+        A
+	</pre>
+      </div>
+
+      <pre>
+    DefaultHandler: (Any Exception)
+        astore_exception jsr(B) aload_exception athrow
+      </pre>
+      
+      <pre>
+    Handler:
+        astore_exception catchBlock
+      </pre>        
+      
+      <pre>
+    Finally:
+        astore_address finallyBlock ret
+      </pre>
+      
+      <p>
+	The store operations in the handlers save the exception to a local variable, whereas the store
+	operation at the beginning of the subroutine saves the return address to local variable.
+      </p>
+      <p>
+	For each catch block, a <code>codeException(BeginPC, EndPC, HandlerPC)</code> is recorded, 
+	where <code>HandlerPC = begin(Default?Handler)</code> and
+      <ol>
+	<li><code>BeginPC = begin(tryBlock), EndPC = begin(first Handler)-1</code>, i.e. including the goto(A)
+	  for each non-default handler, or both
+	</li>
+	<li>
+	  <code>BeginPC = begin(tryBlock), EndPC = end(last Handler)</code> and
+	</li>
+	<li>
+	  <code>BeginPC = A = begin(Tail), EndPC = end(Tail)</code> for the default handler.  
+	</li>
+      </ol>
+      
+      <p>
+	Note that from the byte code we cannot deduce the end of the last catch clause in the
+	absense of a finally clause. This is also manifested by the equivalence of the following
+	two Java code fracments:
+      </p>
+      <pre>
+    foo: {
+        try {
+           A;
+           break foo;
+        } catch(e) {
+           B;
+        }
+        C;
+    }
+    
+    foo: {
+        try {
+           A;
+           break foo;
+        } catch(e) {
+           B;
+           C;
+        }
+    }
+      </pre>
+    </div> <!-- Exception Handling -->
+
+    <hr>
+    <address><a href="mailto:wolfgang@decatur.de"></a></address>
+    <!-- Created: Sat Oct 15 16:17:41 Westeuropäische Sommerzeit 2005 -->
+    <!-- hhmts start -->
+Last modified: Sat Oct 15 20:44:54 Westeuropäische Sommerzeit 2005
+<!-- hhmts end -->
+  </body>
+</html>
