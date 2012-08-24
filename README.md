@@ -14,6 +14,10 @@ A Java Bytecode to JavaScript Cross-Compiler.
 
 3. Optionally install https://github.com/decatur/j2js-demos
 
+##Building your project
+
+It is highly recommended that you compile your project (i.e. generate class files) against `j2js-jre`, and not `rt.jar`. This way you avoid link errors (missing classes or methods) at the cross-compile stage. See the warning at the bottom of the document.
+
 ##Usage
 
     java -cp <RUNTIME_CLASSPATH> com.j2js.J2JSCompiler <basedir> <CROSS_COMPILE_CLASSPATH> <entryPointClassName> <targetLocation>
@@ -73,6 +77,14 @@ and you want to cross-compile class `org.mydomain.my-project.MyClass`. Then
 will create the assemblies.
 
 ##Warning
-The project j2js-jre contains a hand-crafted version of the Java Runtime Environment. Do not substitute the path
-to this project by a path to `Java/jreX/lib/rt.jar`. 
+The project `j2js-jre` contains a hand-crafted version of the Java Runtime Environment. Do not put `Java/jreX/lib/rt.jar` into the `<CROSS_COMPILE_CLASSPATH>`.
 
+##Limitations
+The cross-compiler is able to translate any legal Java Bytecode. However, naturally, the compiler cannot support the Java Native Interface (JNI).
+
+##Cross Compiling Scala
+The current Scala version uses JRE classes such as `ClassLoader` or `SecurityContext` even in base Scala classes. These JRE classes do not make sense in a web agent context and are therefore not implemented in `j2js-jre`.
+
+A workaround would be to hand-craft a subset of Scala classes, avoiding dependencies to JRE classes such as `ClassLoader`. But this is a lot of work.
+
+So, sadly, we cannot support Scala under this circumstance.
