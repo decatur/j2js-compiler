@@ -19,7 +19,7 @@ import com.j2js.dom.ASTNode;
 import com.j2js.dom.MethodDeclaration;
 
 /**
- * @author j2js.com
+ * @author Wolfgang Kuehn
  */
 public final class Utils {
 
