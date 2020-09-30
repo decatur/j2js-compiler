@@ -1,3 +1,7 @@
+⚠️ Deprecated. Consider to adopt the TypeScript eco system. 
+
+A lightweight component to expose computational MATLAB resources over HTTP.
+
 #j2js-compiler
 
 A Java Bytecode to JavaScript Cross-Compiler.
